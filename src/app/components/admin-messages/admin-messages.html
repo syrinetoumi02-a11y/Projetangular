@@ -1,0 +1,39 @@
+<div class="container mt-5 mb-5">
+  <div class="text-center mb-5">
+    <p class="text-warning">ADMINISTRATION / CONTACT</p>
+    <h1 class="fw-bold">MESSAGES REÇUS</h1>
+    <p class="text-muted">Consultez les demandes envoyées par vos visiteurs.</p>
+  </div>
+
+  @if (errorMessage()) {
+    <div class="alert alert-danger">
+      {{ errorMessage() }}
+    </div>
+  }
+
+  @if (messages().length === 0 && !errorMessage()) {
+    <div class="text-center p-5">
+      <h4 class="text-warning">Aucun message pour le moment</h4>
+      <p class="text-muted">Les nouveaux messages apparaîtront ici.</p>
+    </div>
+  }
+
+  @for (msg of messages(); track msg.id) {
+    <div class="card mb-4 p-4">
+      <div class="d-flex justify-content-between flex-wrap mb-3">
+        <h4>{{ msg.subject }}</h4>
+        <span class="text-warning">
+          {{ msg.createdAt | date: 'dd/MM/yyyy à HH:mm' }}
+        </span>
+      </div>
+
+      <p><strong class="text-warning">Nom :</strong> {{ msg.name }}</p>
+      <p><strong class="text-warning">E-mail :</strong> {{ msg.email }}</p>
+
+      <hr />
+
+      <p class="text-warning fw-bold">Message :</p>
+      <p>{{ msg.message }}</p>
+    </div>
+  }
+</div>

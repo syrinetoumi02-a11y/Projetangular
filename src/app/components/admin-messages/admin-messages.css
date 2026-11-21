@@ -1,0 +1,236 @@
+/* ==========================================
+   SIRAY LUXURY — ADMIN MESSAGES
+   PREMIUM BLACK & GOLD DESIGN
+========================================== */
+
+:host {
+  display: block;
+  min-height: 100vh;
+  padding: 25px 0 70px;
+  background:
+    radial-gradient(
+      ellipse at 15% 0%,
+      rgba(212, 175, 55, 0.09),
+      transparent 40%
+    ),
+    radial-gradient(
+      ellipse at 90% 80%,
+      rgba(212, 175, 55, 0.05),
+      transparent 40%
+    ),
+    #090909;
+}
+
+/* MAIN CONTAINER */
+.container {
+  max-width: 1100px;
+}
+
+/* PAGE HEADER */
+.container > .text-center {
+  margin-bottom: 55px !important;
+}
+
+.container > .text-center p:first-child {
+  color: #d4af37 !important;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 4px;
+  margin-bottom: 18px;
+}
+
+.container h1 {
+  color: #f1d675;
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: 4px;
+  margin-bottom: 18px;
+}
+
+.container > .text-center p:last-child {
+  color: #999 !important;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+/* MESSAGE CARDS */
+.container > .card {
+  position: relative;
+  overflow: hidden;
+  padding: 30px !important;
+  background: linear-gradient(
+    145deg,
+    #1c1c1c,
+    #111111
+  ) !important;
+  border: 1px solid rgba(212, 175, 55, 0.25) !important;
+  border-radius: 17px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+  transition: all 0.35s ease;
+}
+
+/* GOLD DECORATION */
+.container > .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    #fff0a6,
+    #d4af37,
+    #8d6c19
+  );
+}
+
+/* CARD HOVER */
+.container > .card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(212, 175, 55, 0.65) !important;
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(212, 175, 55, 0.07);
+}
+
+/* MESSAGE SUBJECT */
+.container > .card h4 {
+  color: #f1d675;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  margin: 0;
+}
+
+/* DATE */
+.container > .card .text-warning {
+  color: #d4af37 !important;
+}
+
+.container > .card span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* NAME AND EMAIL */
+.container > .card p {
+  color: #d0d0d0;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.container > .card p strong {
+  display: inline-block;
+  min-width: 85px;
+  color: #e6c45b !important;
+  font-weight: 800;
+}
+
+/* SEPARATOR */
+.container > .card hr {
+  margin: 25px 0;
+  border-color: rgba(212, 175, 55, 0.35);
+  opacity: 0.6;
+}
+
+/* MESSAGE CONTENT TITLE */
+.container > .card p.text-warning {
+  color: #e6c45b !important;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+/* MESSAGE TEXT */
+.container > .card p:last-child {
+  color: #eeeeee;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(212, 175, 55, 0.12);
+  border-radius: 10px;
+  padding: 18px;
+  line-height: 1.9;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* EMPTY STATE */
+.container > .text-center.p-5 {
+  padding: 65px 25px !important;
+  background: linear-gradient(145deg, #191919, #101010);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.container > .text-center.p-5 h4 {
+  color: #e6c45b !important;
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.container > .text-center.p-5 p {
+  color: #999 !important;
+}
+
+/* ERROR ALERT */
+.alert-danger {
+  padding: 18px 22px;
+  color: #ffaaaa;
+  background: rgba(160, 35, 35, 0.12);
+  border: 1px solid rgba(255, 100, 100, 0.35);
+  border-radius: 12px;
+}
+
+/* RESPONSIVE TABLET */
+@media (max-width: 768px) {
+  :host {
+    padding: 20px 0 45px;
+  }
+
+  .container h1 {
+    font-size: 1.9rem;
+    letter-spacing: 2px;
+  }
+
+  .container > .card {
+    padding: 24px !important;
+  }
+
+  .container > .card h4 {
+    font-size: 1.1rem;
+  }
+}
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 480px) {
+  .container h1 {
+    font-size: 1.55rem;
+    letter-spacing: 1.5px;
+  }
+
+  .container > .card {
+    padding: 20px 16px 20px 22px !important;
+  }
+
+  .container > .card .d-flex {
+    gap: 12px;
+  }
+
+  .container > .card span {
+    font-size: 0.78rem;
+  }
+
+  .container > .card p {
+    font-size: 0.88rem;
+  }
+
+  .container > .card p strong {
+    min-width: 75px;
+  }
+}

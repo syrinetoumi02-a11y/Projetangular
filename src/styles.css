@@ -1,0 +1,40 @@
+
+/* =====================================
+   SIRAY LUXURY - GLOBAL DESIGN
+===================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #08090a;
+  color: #f5f2e9;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  transition: all 0.3s ease;
+}
+
+::selection {
+  background: #d6b65c;
+  color: #08090a;
+}
+
+img {
+  max-width: 100%;
+}

@@ -1,0 +1,17 @@
+.admin-nav {
+    display: flex;
+    gap: 25px;
+    padding: 20px;
+    background: #111;
+  }
+  
+  .admin-nav a {
+    color: #d4af37;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .admin-nav a:hover {
+    color: white;
+  }

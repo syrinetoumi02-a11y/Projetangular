@@ -1,0 +1,39 @@
+<nav class="luxury-navbar">
+  <div class="nav-container">
+    <!-- LOGO -->
+    <a class="luxury-logo" routerLink="/">
+      SIRAY<span> LUXURY</span>
+      <small>DRIVE THE EXCEPTIONAL</small>
+    </a>
+
+    <!-- MENU ADMIN -->
+    @if (isLoggedIn()) {
+      <div class="nav-links">
+        <a routerLink="/admin/dashboard" routerLinkActive="active"> Dashboard </a>
+        <a routerLink="/admin/cars" routerLinkActive="active"> Gestion des voitures </a>
+        <a routerLink="/cars">Voir le showroom</a>
+
+        <button class="nav-admin-btn" (click)="logout()">Déconnexion</button>
+      </div>
+    } @else {
+      <!-- MENU VISITEUR -->
+      <div class="nav-links">
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          Accueil
+        </a>
+
+        <a routerLink="/cars" routerLinkActive="active"> Collection </a>
+
+        <a routerLink="/about" routerLinkActive="active"> À propos </a>
+
+        <a routerLink="/contact" routerLinkActive="active"> Contact </a>
+
+        <a routerLink="/admin" class="admin-link"> Administration </a>
+      </div>
+    }
+  </div>
+</nav>
+
+<main class="page-content">
+  <router-outlet />
+</main>

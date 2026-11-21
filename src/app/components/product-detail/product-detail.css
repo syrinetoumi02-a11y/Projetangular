@@ -1,0 +1,302 @@
+
+:host {
+  display: block;
+  min-height: 80vh;
+}
+
+.detail-page {
+  max-width: 1200px;
+  margin: auto;
+  padding: 55px 25px 80px;
+}
+
+/* En-tête */
+.detail-header,
+.section-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.detail-header > span,
+.section-heading > span {
+  color: #d4af37;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.detail-header h1 {
+  color: white;
+  font-size: clamp(25px, 4vw, 40px);
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin: 15px 0;
+}
+
+.gold-line {
+  width: 60px;
+  height: 2px;
+  background: #d4af37;
+  margin: 20px auto;
+}
+
+.gold-line.left {
+  margin: 20px 0;
+}
+
+/* Présentation */
+.vehicle-showcase {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 45px;
+  align-items: center;
+  background: #151515;
+  border: 1px solid #38301b;
+  border-radius: 14px;
+  padding: 25px;
+}
+
+.vehicle-image {
+  position: relative;
+  height: 390px;
+  overflow: hidden;
+  border-radius: 9px;
+  background: #222;
+}
+
+.vehicle-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.availability-badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  padding: 9px 14px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 3px;
+}
+
+.available {
+  background: #198754;
+  color: white;
+}
+
+.unavailable {
+  background: #dc3545;
+  color: white;
+}
+
+.vehicle-info {
+  padding: 15px;
+}
+
+.vehicle-brand {
+  color: #d4af37;
+  letter-spacing: 4px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.vehicle-info h2 {
+  color: white;
+  font-size: 32px;
+  font-weight: 800;
+  margin-top: 12px;
+}
+
+.vehicle-description {
+  color: #aaa;
+  line-height: 1.9;
+  margin: 25px 0;
+}
+
+.vehicle-price {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 0;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+
+.vehicle-price span,
+.vehicle-date span {
+  color: #888;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.vehicle-price strong {
+  color: #f1d675;
+  font-size: 27px;
+}
+
+.vehicle-date {
+  margin-top: 20px;
+}
+
+.vehicle-date p {
+  color: #ddd;
+  margin-top: 8px;
+}
+
+/* Caractéristiques */
+.specifications-section,
+.reviews-section {
+  margin-top: 85px;
+}
+
+.section-heading h2 {
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+  margin-top: 12px;
+}
+
+.specifications-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.spec-card {
+  background: #151515;
+  border: 1px solid #38301b;
+  border-radius: 10px;
+  padding: 28px 15px;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.spec-card:hover {
+  border-color: #d4af37;
+  transform: translateY(-5px);
+}
+
+.spec-icon {
+  color: #d4af37;
+  font-size: 30px;
+}
+
+.spec-card p {
+  color: #888;
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin: 15px 0 10px;
+}
+
+.spec-card h3 {
+  color: #f1d675;
+  font-size: 17px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+/* Avis */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.review-card {
+  background: #151515;
+  border: 1px solid #38301b;
+  border-radius: 10px;
+  padding: 25px;
+  transition: 0.3s ease;
+}
+
+.review-card:hover {
+  border-color: #d4af37;
+}
+
+.review-stars {
+  color: #d4af37;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+}
+
+.review-card h3 {
+  color: white;
+  font-size: 17px;
+}
+
+.review-card p {
+  color: #aaa;
+  line-height: 1.8;
+  margin: 12px 0;
+}
+
+.review-card small {
+  color: #d4af37;
+}
+
+.empty-reviews {
+  background: #151515;
+  border: 1px solid #38301b;
+  border-radius: 10px;
+  text-align: center;
+  padding: 30px;
+}
+
+.empty-reviews p {
+  color: #aaa;
+  margin: 0;
+}
+
+/* Chargement */
+.loading-message {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.loading-message span {
+  color: #d4af37;
+  font-size: 35px;
+}
+
+.loading-message p {
+  color: #aaa;
+  margin-top: 15px;
+}
+
+/* Responsive */
+@media (max-width: 850px) {
+  .vehicle-showcase {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .specifications-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .detail-page {
+    padding: 35px 15px 55px;
+  }
+
+  .vehicle-image {
+    height: 240px;
+  }
+
+  .vehicle-info h2 {
+    font-size: 25px;
+  }
+
+  .specifications-grid,
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading h2 {
+    font-size: 20px;
+  }
+}

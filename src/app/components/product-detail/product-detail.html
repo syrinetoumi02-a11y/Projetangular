@@ -1,0 +1,118 @@
+<div class="detail-page">
+  @if (car()) {
+    <!-- En-tête -->
+    <div class="detail-header">
+      <span>SIRAY LUXURY — EXCLUSIVE COLLECTION</span>
+      <h1>DISCOVER THE EXCEPTIONAL</h1>
+      <div class="gold-line"></div>
+    </div>
+
+    <!-- Présentation de la voiture -->
+    <section class="vehicle-showcase">
+      <div class="vehicle-image">
+        <img [src]="car()!.image" [alt]="car()!.name" />
+
+        <span
+          class="availability-badge"
+          [class.available]="car()!.available"
+          [class.unavailable]="!car()!.available"
+        >
+          {{ car()!.available ? 'DISPONIBLE' : 'INDISPONIBLE' }}
+        </span>
+      </div>
+
+      <div class="vehicle-info">
+        <span class="vehicle-brand">{{ car()!.brand }}</span>
+        <h2>{{ car()!.name }}</h2>
+        <div class="gold-line left"></div>
+
+        <p class="vehicle-description">
+          {{ car()!.description }}
+        </p>
+
+        <div class="vehicle-price">
+          <span>PRIX</span>
+          <strong>{{ car()!.price | priceFormat }}</strong>
+        </div>
+
+        <div class="vehicle-date">
+          <span>DATE DE SORTIE</span>
+          <p>{{ car()!.releaseDate }}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Caractéristiques -->
+    <section class="specifications-section">
+      <div class="section-heading">
+        <span>01 — PERFORMANCE</span>
+        <h2>CARACTÉRISTIQUES TECHNIQUES</h2>
+        <div class="gold-line"></div>
+      </div>
+
+      <div class="specifications-grid">
+        <div class="spec-card">
+          <span class="spec-icon">⚙</span>
+          <p>MOTEUR</p>
+          <h3>{{ car()!.specifications.engine }}</h3>
+        </div>
+
+        <div class="spec-card">
+          <span class="spec-icon">◈</span>
+          <p>PUISSANCE</p>
+          <h3>{{ car()!.specifications.horsepower }} CV</h3>
+        </div>
+
+        <div class="spec-card">
+          <span class="spec-icon">✧</span>
+          <p>TRANSMISSION</p>
+          <h3>{{ car()!.specifications.transmission }}</h3>
+        </div>
+
+        <div class="spec-card">
+          <span class="spec-icon">◆</span>
+          <p>CARBURANT</p>
+          <h3>{{ car()!.specifications.fuel }}</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- Avis clients -->
+    <section class="reviews-section">
+      <div class="section-heading">
+        <span>02 — CUSTOMER EXPERIENCE</span>
+        <h2>AVIS DE NOS CLIENTS</h2>
+        <div class="gold-line"></div>
+      </div>
+
+      @if (car()!.comments.length > 0) {
+        <div class="reviews-grid">
+          @for (comment of car()!.comments; track $index) {
+            <div class="review-card">
+              <div class="review-stars">✦ AVIS CLIENT</div>
+              <h3>{{ comment.author }}</h3>
+              <p>{{ comment.message }}</p>
+              <small>Publié le : {{ comment.date }}</small>
+            </div>
+          }
+        </div>
+      } @else {
+        <div class="empty-reviews">
+          <p>Aucun commentaire pour cette voiture.</p>
+        </div>
+      }
+    </section>
+  } @else if (errorMessage()) {
+    <!-- Message d'erreur -->
+    <div class="loading-message">
+      <span>✦</span>
+      <p>{{ errorMessage() }}</p>
+    </div>
+  } @else {
+    <!-- Chargement -->
+    <div class="loading-message">
+      <span>✦</span>
+      <p>Chargement de votre véhicule...</p>
+    </div>
+  }
+</div>

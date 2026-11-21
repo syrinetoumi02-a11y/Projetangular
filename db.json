@@ -1,0 +1,135 @@
+{
+  "cars": [
+    {
+      "id": "1",
+      "name": "Mercedes-Benz S 580 4MATIC",
+      "brand": "Mercedes",
+      "image": "/images/mercedes.jpg",
+      "price": 120000,
+      "available": false,
+      "releaseDate": "2025-01-15T00:00:00.000Z",
+      "description": "A luxurious full-size sedan powered by a twin-turbocharged V8 engine, offering exceptional comfort and refinement.",
+      "specifications": {
+        "engine": "4.0L V8 Biturbo",
+        "horsepower": 503,
+        "transmission": "9G-TRONIC Automatic",
+        "fuel": "Petrol"
+      },
+      "comments": []
+    },
+    {
+      "id": "2",
+      "name": "BMW M4 Competition",
+      "brand": "BMW",
+      "image": "/images/bmw.jpg",
+      "price": 95000,
+      "available": true,
+      "releaseDate": "2025-01-15",
+      "description": "A high-performance sports coupe powered by BMW M TwinPower Turbo technology.",
+      "specifications": {
+        "engine": "3.0L Twin-Turbo Inline-6",
+        "horsepower": 510,
+        "transmission": "8-Speed M Steptronic Automatic",
+        "fuel": "Petrol"
+      }
+    },
+    {
+      "id": "3",
+      "name": "Porsche 911 GT3 RS",
+      "brand": "Porsche",
+      "image": "/images/Porsche-911-GT4-R-2.jpg",
+      "price": 250000,
+      "available": true,
+      "releaseDate": "2024-01-15",
+      "description": "A track-focused sports car featuring advanced aerodynamics and a naturally aspirated flat-six engine.",
+      "specifications": {
+        "engine": "4.0L Naturally Aspirated Flat-Six",
+        "horsepower": 525,
+        "transmission": "7-Speed PDK",
+        "fuel": "Petrol"
+      }
+    },
+    {
+      "id": "4",
+      "name": "Bugatti W16 Mistral",
+      "brand": "Bugatti",
+      "image": "/images/bugatti.jpg",
+      "price": 5000000,
+      "available": true,
+      "releaseDate": "2024-01-15",
+      "description": "An exclusive luxury roadster powered by Bugatti's legendary quad-turbocharged W16 engine.",
+      "specifications": {
+        "engine": "8.0L W16 Quad-Turbo",
+        "horsepower": 1600,
+        "transmission": "7-Speed Dual-Clutch Automatic",
+        "fuel": "Petrol"
+      }
+    },
+    {
+      "id": "5",
+      "name": "Lamborghini Aventador SVJ",
+      "brand": "Lamborghini",
+      "image": "/images/lambo aventador.jpg",
+      "price": 600000,
+      "available": true,
+      "releaseDate": "2023-01-15",
+      "description": "An exclusive V12 supercar featuring Lamborghini's ALA 2.0 active aerodynamics system.",
+      "specifications": {
+        "engine": "6.5L Naturally Aspirated V12",
+        "horsepower": 770,
+        "transmission": "7-Speed ISR Robotized",
+        "fuel": "Petrol"
+      }
+    },
+    {
+      "id": "6",
+      "name": "Gordon Murray T.50",
+      "brand": "Gordon Murray Automotive",
+      "image": "/images/murray.jpg",
+      "price": 3000000,
+      "available": true,
+      "releaseDate": "2024-01-15",
+      "description": "An exclusive lightweight supercar featuring a naturally aspirated Cosworth V12 and a rear-mounted aerodynamic fan.",
+      "specifications": {
+        "engine": "3.9L Cosworth GMA V12",
+        "horsepower": 650,
+        "transmission": "6-Speed Manual",
+        "fuel": "Petrol"
+      }
+    },
+    {
+      "id": "7",
+      "name": "Rolls-Royce Spectre",
+      "brand": "Rolls-Royce",
+      "image": "/images/Rolls royce.jpg",
+      "price": 450000,
+      "available": true,
+      "releaseDate": "2024-01-15",
+      "description": "An all-electric luxury coupe combining exceptional comfort, elegant design and silent performance.",
+      "specifications": {
+        "engine": "Two Electric Motors",
+        "horsepower": 585,
+        "transmission": "Single-Speed",
+        "fuel": "Electric"
+      }
+    },
+    {
+      "id": "8",
+      "name": "Tesla Model Y",
+      "brand": "Tesla",
+      "image": "/images/tesla.jpg",
+      "price": 55000,
+      "available": true,
+      "releaseDate": "2025-01-15",
+      "description": "A white all-electric SUV combining modern technology, spacious comfort and everyday practicality.",
+      "specifications": {
+        "engine": "Electric Motor(s), Version-Dependent",
+        "horsepower": 425,
+        "transmission": "Single-Speed Fixed Gear",
+        "fuel": "Electric"
+      }
+    }
+  ],
+  "messages": [],
+  "$schema": "./node_modules/json-server/schema.json"
+}

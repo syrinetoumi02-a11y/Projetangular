@@ -1,0 +1,143 @@
+<div class="container mt-5 mb-5">
+  <div class="card shadow p-4">
+    <h2 class="text-center mb-4 text-warning">
+      {{ carId() ? 'Modifier une voiture' : 'Ajouter une voiture' }}
+    </h2>
+
+    <form (submit)="$event.preventDefault(); saveCar()">
+      <h5 class="mb-3">Informations générales</h5>
+
+      <!-- NOM -->
+      <div class="mb-3">
+        <label class="form-label">Nom de la voiture</label>
+        <input type="text" class="form-control" [formField]="carForm.name" />
+        @if (carForm.name().touched() && carForm.name().invalid()) {
+          @for (error of carForm.name().errors(); track $index) {
+            <small class="text-danger">{{ error.message }}</small>
+          }
+        }
+      </div>
+
+      <!-- MARQUE -->
+      <div class="mb-3">
+        <label class="form-label">Marque</label>
+        <input type="text" class="form-control" [formField]="carForm.brand" />
+        @if (carForm.brand().touched() && carForm.brand().invalid()) {
+          @for (error of carForm.brand().errors(); track $index) {
+            <small class="text-danger">{{ error.message }}</small>
+          }
+        }
+      </div>
+
+      <!-- IMAGE -->
+      <div class="mb-3">
+        <label class="form-label">Image (chemin)</label>
+        <input type="text" class="form-control" [formField]="carForm.image" />
+        @if (carForm.image().touched() && carForm.image().invalid()) {
+          @for (error of carForm.image().errors(); track $index) {
+            <small class="text-danger">{{ error.message }}</small>
+          }
+        }
+      </div>
+
+      <!-- PRIX -->
+      <div class="mb-3">
+        <label class="form-label">Prix (€)</label>
+        <input type="number" class="form-control" [formField]="carForm.price" />
+        @if (carForm.price().touched() && carForm.price().invalid()) {
+          @for (error of carForm.price().errors(); track $index) {
+            <small class="text-danger">{{ error.message }}</small>
+          }
+        }
+      </div>
+
+      <!-- DATE -->
+      <div class="mb-3">
+        <label class="form-label">Date de sortie</label>
+        <input type="date" class="form-control" [formField]="carForm.releaseDate" />
+        @if (carForm.releaseDate().touched() && carForm.releaseDate().invalid()) {
+          @for (error of carForm.releaseDate().errors(); track $index) {
+            <small class="text-danger">{{ error.message }}</small>
+          }
+        }
+      </div>
+
+      <!-- DESCRIPTION -->
+      <div class="mb-3">
+        <label class="form-label">Description</label>
+        <textarea class="form-control" [formField]="carForm.description"></textarea>
+        @if (carForm.description().touched() && carForm.description().invalid()) {
+          @for (error of carForm.description().errors(); track $index) {
+            <small class="text-danger">{{ error.message }}</small>
+          }
+        }
+      </div>
+
+      <!-- DISPONIBILITÉ -->
+      <div class="form-check mb-4">
+        <input type="checkbox" class="form-check-input" [formField]="carForm.available" />
+        <label class="form-check-label"> Voiture disponible </label>
+      </div>
+
+      <hr />
+
+      <h5 class="mb-3">Caractéristiques techniques</h5>
+
+      <!-- MOTEUR -->
+      <div class="mb-3">
+        <label class="form-label">Moteur</label>
+        <input type="text" class="form-control" [formField]="carForm.specifications.engine" />
+        @if (
+          carForm.specifications.engine().touched() && carForm.specifications.engine().invalid()
+        ) {
+          @for (error of carForm.specifications.engine().errors(); track $index) {
+            <small class="text-danger">{{ error.message }}</small>
+          }
+        }
+      </div>
+
+      <!-- PUISSANCE -->
+      <div class="mb-3">
+        <label class="form-label">Puissance (CV)</label>
+        <input type="number" class="form-control" [formField]="carForm.specifications.horsepower" />
+        @if (
+          carForm.specifications.horsepower().touched() &&
+          carForm.specifications.horsepower().invalid()
+        ) {
+          @for (error of carForm.specifications.horsepower().errors(); track $index) {
+            <small class="text-danger">{{ error.message }}</small>
+          }
+        }
+      </div>
+
+      <!-- TRANSMISSION -->
+      <div class="mb-3">
+        <label class="form-label">Transmission</label>
+        <input type="text" class="form-control" [formField]="carForm.specifications.transmission" />
+        @if (
+          carForm.specifications.transmission().touched() &&
+          carForm.specifications.transmission().invalid()
+        ) {
+          @for (error of carForm.specifications.transmission().errors(); track $index) {
+            <small class="text-danger">{{ error.message }}</small>
+          }
+        }
+      </div>
+
+      <!-- CARBURANT -->
+      <div class="mb-3">
+        <label class="form-label">Carburant</label>
+        <input type="text" class="form-control" [formField]="carForm.specifications.fuel" />
+        @if (carForm.specifications.fuel().touched() && carForm.specifications.fuel().invalid()) {
+          @for (error of carForm.specifications.fuel().errors(); track $index) {
+            <small class="text-danger">{{ error.message }}</small>
+          }
+        }
+      </div>
+
+      <button type="submit" class="btn btn-warning w-100">
+        {{ carId() ? 'Enregistrer les modifications' : 'Ajouter la voiture' }}
+      </button>
+    </form>
+  </div>
+</div>

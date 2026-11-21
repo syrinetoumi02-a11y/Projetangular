@@ -1,0 +1,33 @@
+<div class="luxury-card">
+  <!-- Image de la voiture -->
+  <div class="car-image-container">
+    <img [src]="car().image" [alt]="car().name" class="car-image" />
+
+    <span
+      class="availability-badge"
+      [class.available]="car().available"
+      [class.unavailable]="!car().available"
+    >
+      {{ car().available ? 'DISPONIBLE' : 'INDISPONIBLE' }}
+    </span>
+  </div>
+
+  <!-- Informations -->
+  <div class="card-content">
+    <span class="car-brand">{{ car().brand }}</span>
+
+    <h3 class="car-name">{{ car().name }}</h3>
+
+    <div class="gold-divider"></div>
+
+    <div class="car-price">
+      <span>À PARTIR DE</span>
+      <strong>{{ car().price | priceFormat }}</strong>
+    </div>
+
+    <a [routerLink]="['/cars', car().id]" class="details-button">
+      DÉCOUVRIR LE MODÈLE
+      <span>→</span>
+    </a>
+  </div>
+</div>

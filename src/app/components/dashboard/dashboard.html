@@ -1,0 +1,109 @@
+<div class="dashboard-page">
+  <section class="dashboard-hero">
+    <div class="hero-content">
+      <span class="hero-label">SIRAY LUXURY / ADMINISTRATION</span>
+      <h1>WELCOME BACK.</h1>
+      <p>Gérez votre univers automobile depuis votre espace privé.</p>
+      <a routerLink="/admin/cars" class="hero-button"> EXPLORER LE CATALOGUE <span>→</span> </a>
+    </div>
+    <div class="hero-mark">S</div>
+  </section>
+
+  <section class="dashboard-section">
+    <div class="section-heading">
+      <span>VOTRE ESPACE</span>
+      <h2>Centre de contrôle</h2>
+    </div>
+
+    <div class="dashboard-links">
+      <a routerLink="/admin/cars" class="dashboard-tile">
+        <span class="tile-number">01</span>
+        <span class="tile-icon">◇</span>
+        <h3>Gestion des voitures</h3>
+        <p>Ajoutez, modifiez et gérez votre collection automobile.</p>
+        <span class="tile-link">GÉRER LE CATALOGUE →</span>
+      </a>
+
+      <a routerLink="/admin/messages" class="dashboard-tile">
+        <span class="tile-number">02</span>
+        <span class="tile-icon">✉</span>
+        <h3>Messages reçus</h3>
+        <p>Consultez les demandes envoyées par vos visiteurs.</p>
+        <span class="tile-link">CONSULTER LES MESSAGES →</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="security-section">
+    <div class="security-intro">
+      <span>PARAMÈTRES DU COMPTE</span>
+      <h2>Sécurité administrateur</h2>
+      <p>
+        Vous êtes connecté en tant qu'administrateur. Vous pouvez modifier votre mot de passe
+        ci-dessous.
+      </p>
+    </div>
+
+    <form class="password-panel" (ngSubmit)="changePassword()">
+      <h3>Modifier le mot de passe</h3>
+
+      <div class="form-group">
+        <label class="form-label">Ancien mot de passe</label>
+        <input
+          type="password"
+          class="form-control"
+          [ngModel]="currentPassword()"
+          (ngModelChange)="currentPassword.set($event)"
+          name="currentPassword"
+          placeholder="Saisir l'ancien mot de passe"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Nouveau mot de passe</label>
+        <input
+          type="password"
+          class="form-control"
+          [ngModel]="newPassword()"
+          (ngModelChange)="newPassword.set($event)"
+          name="newPassword"
+          placeholder="Saisir le nouveau mot de passe"
+          required
+          minlength="4"
+        />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Confirmer le nouveau mot de passe</label>
+        <input
+          type="password"
+          class="form-control"
+          [ngModel]="confirmPassword()"
+          (ngModelChange)="confirmPassword.set($event)"
+          name="confirmPassword"
+          placeholder="Confirmer le nouveau mot de passe"
+          required
+          minlength="4"
+        />
+      </div>
+
+      @if (message()) {
+        <div
+          class="dashboard-message"
+          [class.text-danger]="messageType() === 'error'"
+          [class.text-success]="messageType() === 'success'"
+        >
+          {{ message() }}
+        </div>
+      }
+
+      <button type="submit" class="gold-button">ENREGISTRER LE NOUVEAU MOT DE PASSE</button>
+    </form>
+  </section>
+
+  <div class="dashboard-footer">
+    <span>SIRAY LUXURY</span>
+    <button type="button" class="logout-button" (click)="logout()">DÉCONNEXION ↗</button>
+  </div>
+</div>

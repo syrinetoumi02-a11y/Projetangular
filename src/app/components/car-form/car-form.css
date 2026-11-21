@@ -1,0 +1,276 @@
+/* ==========================================
+   SIRAY LUXURY — PREMIUM VEHICLE FORM
+========================================== */
+
+:host {
+  display: block;
+  min-height: 100vh;
+  padding: 55px 20px 75px;
+  background:
+    radial-gradient(ellipse at 15% 0%, rgba(212, 175, 55, 0.10), transparent 40%),
+    radial-gradient(ellipse at 90% 80%, rgba(212, 175, 55, 0.05), transparent 40%),
+    #090909;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1100px;
+  width: 100%;
+}
+
+/* FORM CARD */
+.container > .card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg, #191919, #101010) !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  border-radius: 22px;
+  padding: 48px !important;
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.65),
+    0 0 35px rgba(212, 175, 55, 0.05) !important;
+}
+
+/* GOLD TOP LINE */
+.container > .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 12%;
+  width: 76%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #d4af37,
+    #fff0a6,
+    #d4af37,
+    transparent
+  );
+}
+
+/* MAIN TITLE */
+.container h2 {
+  color: #e6c45b !important;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 42px !important;
+}
+
+/* SECTION TITLES */
+.container h5 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #e6c45b;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-top: 35px;
+  margin-bottom: 25px !important;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.container h5::before {
+  content: "";
+  width: 4px;
+  height: 22px;
+  background: #d4af37;
+  border-radius: 5px;
+  flex-shrink: 0;
+}
+
+/* FORM GROUPS */
+.mb-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+}
+
+/* LABELS */
+.form-label {
+  display: block;
+  width: 100%;
+  min-height: 22px;
+  margin: 0 0 10px 0;
+  padding: 0;
+  color: #e5e5e5;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 22px;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+/* INPUTS */
+.form-control,
+.form-select {
+  display: block;
+  width: 100%;
+  min-height: 52px;
+  padding: 13px 16px;
+  background: #202020 !important;
+  color: #fff !important;
+  border: 1px solid #383838 !important;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-control::placeholder {
+  color: #777;
+}
+
+/* INPUT HOVER */
+.form-control:hover,
+.form-select:hover {
+  border-color: rgba(212, 175, 55, 0.55) !important;
+}
+
+/* INPUT FOCUS */
+.form-control:focus,
+.form-select:focus {
+  background: #242424 !important;
+  color: #fff !important;
+  border-color: #d4af37 !important;
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.12) !important;
+  outline: none;
+}
+
+/* DATE INPUT */
+input[type="date"] {
+  color-scheme: dark;
+}
+
+/* DESCRIPTION */
+textarea.form-control {
+  min-height: 145px;
+  resize: vertical;
+}
+
+/* AVAILABILITY */
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 20px 18px 45px;
+  background: rgba(212, 175, 55, 0.06);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 12px;
+}
+
+.form-check-input {
+  width: 20px;
+  height: 20px;
+  margin-left: -29px;
+  background-color: #222;
+  border: 1px solid #d4af37;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.form-check-input:checked {
+  background-color: #d4af37;
+  border-color: #d4af37;
+}
+
+.form-check-input:focus {
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.15);
+}
+
+.form-check-label {
+  color: #f1d675;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* VALIDATION ERRORS */
+.text-danger {
+  display: block;
+  margin-top: 8px;
+  color: #ff7777 !important;
+  font-size: 0.83rem;
+}
+
+/* SEPARATOR */
+hr {
+  margin: 40px 0;
+  border-color: rgba(212, 175, 55, 0.4);
+  opacity: 0.5;
+}
+
+/* MAIN BUTTON */
+.btn-warning {
+  min-height: 55px;
+  margin-top: 25px;
+  padding: 14px 25px;
+  background: linear-gradient(135deg, #b89128, #f2d879, #c49b2d);
+  border: none;
+  border-radius: 10px;
+  color: #101010 !important;
+  font-weight: 900;
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+
+.btn-warning:hover {
+  background: linear-gradient(135deg, #f5df91, #fff0b8);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.22);
+}
+
+.btn-warning:active {
+  transform: translateY(0);
+}
+
+/* RESPONSIVE TABLET */
+@media (max-width: 768px) {
+  :host {
+    padding: 30px 12px 45px;
+  }
+
+  .container > .card {
+    padding: 28px 20px !important;
+  }
+
+  .container h2 {
+    font-size: 1.45rem;
+    letter-spacing: 1.5px;
+  }
+
+  .container h5 {
+    font-size: 0.95rem;
+  }
+}
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 480px) {
+  .container > .card {
+    padding: 22px 15px !important;
+  }
+
+  .form-label {
+    font-size: 14px;
+  }
+
+  .form-control,
+  .form-select {
+    min-height: 48px;
+  }
+
+  .btn-warning {
+    font-size: 0.78rem;
+    letter-spacing: 0.7px;
+  }
+}

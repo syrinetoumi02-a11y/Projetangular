@@ -1,0 +1,164 @@
+
+/* =====================================
+   SIRAY LUXURY - PREMIUM NAVIGATION
+===================================== */
+
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+.luxury-navbar {
+  width: 100%;
+  min-height: 95px;
+  background: rgba(8, 9, 10, 0.97);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+}
+
+.nav-container {
+  width: 92%;
+  max-width: 1500px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+/* LOGO */
+
+.luxury-logo {
+  color: #f5f2e9;
+  text-decoration: none;
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  white-space: nowrap;
+}
+
+.luxury-logo span {
+  color: #d6b65c;
+}
+
+.luxury-logo small {
+  display: block;
+  color: #888;
+  font-size: 8px;
+  letter-spacing: 4px;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+/* NAVIGATION */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 35px;
+}
+
+.nav-links a {
+  position: relative;
+  color: #e8e8e8;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 12px 0;
+  transition: 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #d6b65c;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #d6b65c;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* ADMIN BUTTON */
+
+.nav-links .nav-admin-btn {
+  border: 1px solid #d6b65c;
+  background: transparent;
+  color: #d6b65c;
+  padding: 13px 22px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.nav-links .nav-admin-btn:hover {
+  background: #d6b65c;
+  color: #080808;
+}
+
+.nav-links .admin-link {
+  border: 1px solid rgba(214, 182, 92, 0.6);
+  padding: 13px 18px;
+}
+
+.nav-links .admin-link::after {
+  display: none;
+}
+
+.nav-links .admin-link:hover {
+  background: #d6b65c;
+  color: #080808;
+}
+
+/* PAGE */
+
+.page-content {
+  min-height: calc(100vh - 95px);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .nav-container {
+    flex-direction: column;
+    padding: 22px 0;
+  }
+
+  .nav-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+  }
+}
+
+@media (max-width: 500px) {
+  .luxury-logo {
+    font-size: 23px;
+  }
+
+  .nav-links {
+    gap: 8px 18px;
+  }
+
+  .nav-links a {
+    font-size: 10px;
+  }
+}

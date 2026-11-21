@@ -1,0 +1,85 @@
+<div class="admin-cars-page">
+  <section class="cars-hero">
+    <div>
+      <span class="cars-eyebrow">SIRAY LUXURY / INVENTORY</span>
+      <h1>THE COLLECTION.</h1>
+      <p>Gérez votre sélection de véhicules d'exception.</p>
+    </div>
+
+    <a routerLink="/admin/cars/add" class="add-car-button"> <span>＋</span> AJOUTER UN VÉHICULE </a>
+  </section>
+
+  <section class="cars-toolbar">
+    <div class="toolbar-heading">
+      <span>VOTRE INVENTAIRE</span>
+      <h2>Collection automobile</h2>
+    </div>
+
+    <div class="search-fields">
+      <div class="search-box">
+        <span>⌕</span>
+        <input
+          type="text"
+          placeholder="Rechercher un modèle..."
+          [value]="searchName()"
+          (input)="searchName.set($any($event.target).value)"
+        />
+      </div>
+
+      <div class="search-box">
+        <span>◇</span>
+        <input
+          type="text"
+          placeholder="Rechercher une marque..."
+          [value]="searchBrand()"
+          (input)="searchBrand.set($any($event.target).value)"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="cars-grid">
+    @for (car of filteredCars(); track car.id) {
+      <article class="admin-car-card">
+        <div class="car-image-container">
+          <img [src]="car.image" [alt]="car.name" />
+
+          <span
+            class="availability"
+            [class.available]="car.available"
+            [class.unavailable]="!car.available"
+          >
+            {{ car.available ? 'DISPONIBLE' : 'INDISPONIBLE' }}
+          </span>
+        </div>
+
+        <div class="car-card-content">
+          <span class="car-brand">{{ car.brand }}</span>
+          <h3>{{ car.name }}</h3>
+
+          <div class="car-price">
+            {{ car.price | priceFormat }}
+          </div>
+
+          <div class="car-card-divider"></div>
+
+          <div class="car-actions">
+            <button type="button" class="edit-car-button" (click)="editCar(car.id)">
+              MODIFIER
+            </button>
+
+            <button type="button" class="delete-car-button" (click)="deleteCar(car.id)">
+              SUPPRIMER
+            </button>
+          </div>
+        </div>
+      </article>
+    } @empty {
+      <div class="empty-cars">
+        <span>◇</span>
+        <h3>AUCUN VÉHICULE TROUVÉ</h3>
+        <p>Essayez une autre recherche ou ajoutez un véhicule à votre collection.</p>
+      </div>
+    }
+  </section>
+</div>

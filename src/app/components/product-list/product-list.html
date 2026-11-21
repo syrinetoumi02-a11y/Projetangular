@@ -1,0 +1,66 @@
+<section class="collection-page">
+  <div class="collection-header">
+    <span class="collection-eyebrow">SIRAY LUXURY — THE ART OF DRIVING</span>
+
+    <h1>OUR COLLECTION</h1>
+
+    <p>
+      Découvrez une collection exclusive de voitures d'exception, où performance et élégance se
+      rencontrent.
+    </p>
+
+    <div class="gold-line"></div>
+  </div>
+
+  <!-- Recherche multicritère -->
+  <div class="search-panel">
+    <div class="search-heading">
+      <span>⌕</span>
+      <div>
+        <h3>Find your exception</h3>
+        <p>Recherchez votre voiture idéale</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mb-3 mb-md-0">
+        <label for="searchName">Nom du véhicule</label>
+        <input
+          id="searchName"
+          type="text"
+          class="form-control"
+          placeholder="Ex : Mercedes-Benz..."
+          [value]="searchName()"
+          (input)="searchName.set($any($event.target).value)"
+        />
+      </div>
+
+      <div class="col-md-6">
+        <label for="searchBrand">Marque</label>
+        <input
+          id="searchBrand"
+          type="text"
+          class="form-control"
+          placeholder="Ex : BMW, Ferrari..."
+          [value]="searchBrand()"
+          (input)="searchBrand.set($any($event.target).value)"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- Liste des voitures -->
+  <div class="collection-grid">
+    @for (car of filteredCars(); track car.id) {
+      <div class="car-item">
+        <app-product-card [car]="car" />
+      </div>
+    } @empty {
+      <div class="empty-state">
+        <span>✦</span>
+        <h3>Aucune voiture trouvée</h3>
+        <p>Essayez une autre recherche pour découvrir notre collection.</p>
+      </div>
+    }
+  </div>
+</section>

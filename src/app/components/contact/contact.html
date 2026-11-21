@@ -1,0 +1,125 @@
+<section class="contact-page">
+  <!-- En-tête -->
+  <div class="contact-header">
+    <span class="contact-eyebrow">WE ARE HERE FOR YOU</span>
+
+    <h1>GET IN <span>TOUCH</span></h1>
+
+    <p>Une question ? Une demande d'information ? Notre équipe SIRAY LUXURY est à votre écoute.</p>
+
+    <div class="gold-line"></div>
+  </div>
+
+  <div class="contact-layout">
+    <!-- Informations -->
+    <div class="contact-info">
+      <span class="section-number">01 / CONTACT INFORMATION</span>
+
+      <h2>Parlons de votre <span>prochain véhicule.</span></h2>
+
+      <p class="info-description">
+        Notre équipe est disponible pour répondre à vos questions concernant notre collection et nos
+        véhicules.
+      </p>
+
+      <div class="info-item">
+        <div class="info-icon">✉</div>
+        <div>
+          <h4>E-mail</h4>
+          <p>Contactez-nous pour toute demande d'information.</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon">◆</div>
+        <div>
+          <h4>Notre engagement</h4>
+          <p>Un accompagnement attentif et personnalisé.</p>
+        </div>
+      </div>
+
+      <div class="contact-signature">
+        SIRAY LUXURY
+        <span>DRIVE THE EXCEPTIONAL</span>
+      </div>
+    </div>
+
+    <!-- Formulaire -->
+    <div class="contact-form-container">
+      <span class="section-number">02 / SEND A MESSAGE</span>
+
+      <h2>Envoyez-nous un <span>message</span></h2>
+
+      <form (ngSubmit)="sendMessage()">
+        <div class="form-group">
+          <label>Nom et prénom</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Votre nom"
+            [ngModel]="name()"
+            (ngModelChange)="name.set($event)"
+            name="name"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Adresse e-mail</label>
+          <input
+            type="email"
+            class="form-control"
+            placeholder="exemple@email.com"
+            [ngModel]="email()"
+            (ngModelChange)="email.set($event)"
+            name="email"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Sujet</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Sujet de votre message"
+            [ngModel]="subject()"
+            (ngModelChange)="subject.set($event)"
+            name="subject"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Message</label>
+          <textarea
+            class="form-control"
+            rows="5"
+            placeholder="Écrivez votre message..."
+            [ngModel]="message()"
+            (ngModelChange)="message.set($event)"
+            name="message"
+            required
+          ></textarea>
+        </div>
+
+        @if (successMessage()) {
+          <div class="success-message">
+            {{ successMessage() }}
+          </div>
+        }
+
+        @if (errorMessage()) {
+          <div class="error-message">
+            {{ errorMessage() }}
+          </div>
+        }
+
+        <button type="submit" class="send-button">
+          ENVOYER LE MESSAGE
+          <span>→</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
